@@ -44,8 +44,7 @@ def accueil():
 # Indique que le service des notes est disponible
 @app.route("/health")
 def health():
-    return jsonify(status="ok")
-
+    return jsonify(status="ok", version="1.0")
 
 # Consultation des notes : toutes les notes,
 # ou seulement celles d'un étudiant si on donne son nom
