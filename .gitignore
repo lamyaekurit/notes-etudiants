@@ -7,3 +7,4 @@ __pycache__/
 *.db
 # Réglages propres à ce poste
 .env
+jetons.json
