@@ -113,4 +113,3 @@ def modifier_note(note_id):
 # Démarrage du service des notes, sur ce poste uniquement
 if __name__ == "__main__":
     app.run(host=os.environ.get("APP_HOST", "127.0.0.1"), port=5000)
-# Ceci est un commentaire volontairement beaucoup trop long pour dépasser la limite de cent caractères fixée par flake8 dans le pipeline.....,lddls,ds
