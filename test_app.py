@@ -32,6 +32,8 @@ def test_recherche_etudiant():
     assert reponse.get_json()[0]["note"] == 15.5
 
 # Le service indique sa version
+
+
 def test_version():
     reponse = client.get("/health")
     assert reponse.status_code == 200
