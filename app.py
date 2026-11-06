@@ -46,11 +46,13 @@ def accueil():
 # Indique que le service des notes est disponible
 @app.route("/health")
 def health():
-    return jsonify(status="ok", version="1.0")
+    return jsonify({"status": "ok", "version": "1.0"})
 
 # Consultation des notes : toutes les notes,
 # ou seulement celles d'un étudiant si on donne son nom
 # Exemple : /notes?etudiant=Amina
+
+
 @app.route("/notes")
 def lister_notes():
     # Nom de l'étudiant recherché (facultatif)
@@ -66,6 +68,8 @@ def lister_notes():
     )
 
 # Modification d'une note par l'enseignant
+
+
 @app.route("/notes/<int:note_id>", methods=["PUT"])
 def modifier_note(note_id):
     # Authentification : qui est l'utilisateur ?
@@ -104,7 +108,8 @@ def modifier_note(note_id):
     except sqlite3.Error:
         logging.exception("Erreur lors de la modification de la note")
         return jsonify({"erreur": "Erreur interne"}), 500
-    
+
+
 # Démarrage du service des notes, sur ce poste uniquement
 if __name__ == "__main__":
     app.run(host=os.environ.get("APP_HOST", "127.0.0.1"), port=5000)

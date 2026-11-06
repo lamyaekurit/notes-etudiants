@@ -9,6 +9,8 @@ from flask import request
 FICHIER_JETONS = os.environ.get("FICHIER_JETONS", "jetons.json")
 # Retrouve l'utilisateur (nom, rôle, module) à partir du jeton
 # présenté avec la demande ; personne si le jeton est absent ou inconnu
+
+
 def utilisateur_connecte():
     entete = request.headers.get("Authorization", "")
     if not entete.startswith("Bearer "):
